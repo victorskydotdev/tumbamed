@@ -1,0 +1,70 @@
+@use '../resets';
+
+.second-section {
+	padding: 7em 0;
+
+	.container {
+		@include resets.breakpoints();
+
+		.brow-highlight {
+			position: relative;
+			width: fit-content;
+			margin: 0 auto 3em;
+			@include resets.poppins();
+			display: flex;
+
+			.icon {
+				@include resets.brow-highlight-icon();
+			}
+
+			.text {
+				@include resets.brow-highlight-text();
+			}
+		}
+
+		.wrap {
+			width: 60%;
+			margin: 0 auto;
+
+			.heading {
+				@include resets.poppins();
+				// color: resets.$grey;
+				color: transparent;
+				font-size: 2rem;
+				font-weight: 400;
+				margin-bottom: 0.7em;
+				text-align: center;
+
+				@include resets.text-gradient();
+
+				// .highlight1 {
+				// 	color: #7575fe;
+				// }
+				// .highlight2 {
+				// 	color: #df2a83;
+				// }
+				// .highlight3 {
+				// 	color: #fab211;
+				// }
+				// .highlight4 {
+				// 	color: mediumseagreen;
+				// }
+			}
+
+			.subtext {
+				color: resets.$text-color;
+				text-align: center;
+			}
+
+			&__btn-wrap {
+				text-align: center;
+
+				.btn {
+					@include resets.btn();
+					width: fit-content;
+					margin: 1.7em auto 0;
+				}
+			}
+		}
+	}
+}
