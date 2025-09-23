@@ -13,7 +13,7 @@ const footerTemplate = () => {
 					</p>
 
 					<div class="wrap">
-						<button class="btn">
+						<button class="btn book-app-btn">
 							<span class="icon">
 								<i class="fa-solid fa-calendar-check"></i>
 							</span>
@@ -49,4 +49,6 @@ const footerTemplate = () => {
 
 export const renderFooter = () => {
 	footer.innerHTML += footerTemplate();
+
+	const bookAppBtn = document.querySelector('.book-app-btn');
 };

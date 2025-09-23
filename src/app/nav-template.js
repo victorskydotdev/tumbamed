@@ -7,12 +7,12 @@ const template = (callback) => {
 	return `
     <div class="nav">
       <div class="nav__logo">
-        <a href="#" class="nav__logo-link">
+        <a href="/" class="nav__logo-link">
           <img src="${brandLogo}" alt="Logo">
         </a>
       </div>
 
-      <ul class="nav__links">
+      <ul class="nav__links navbar">
         <div class="wrap">
           <li class="nav__link">
             <a href="/">Home</a>
@@ -32,7 +32,7 @@ const template = (callback) => {
         </div>
 
         <div class="nav__appointment">
-          <button class="btn">
+          <button class="btn book-app-btn">
             <span class="icon">
 							<i class="fa-solid fa-calendar-check"></i>
             </span>
@@ -43,7 +43,7 @@ const template = (callback) => {
 
       <div class="hamburger">
         <button class="menu-btn">
-          <img src="${menuIcon}" alt="menu button" />
+          <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
@@ -54,14 +54,57 @@ export const renderNav = (cb) => {
 	if (headerNav) {
 		headerNav.innerHTML = template(cb);
 
-		const currentPosition = 250;
+		const menuButton = document.querySelector('.menu-btn');
+		const mobileNav = document.querySelector('.navbar');
+
+		if (menuButton && mobileNav) {
+			menuButton.addEventListener('click', () => {
+				// alert('hello world');
+				mobileNav.classList.add('show-mobile-nav');
+			});
+		}
+
+		const currentPosition = 100;
 
 		window.addEventListener('scroll', () => {
 			if (window.scrollY > currentPosition) {
 				headerNav.classList.add('fixed-navbar');
+
+				const bookAppBtn = document.querySelector('.book-app-btn');
+
+				const url = `https://www.hotdoc.com.au/medical-centres/tumbarumba-NSW-2653/tumbarumba-medical-practice/doctors`;
+
+				if (bookAppBtn) {
+					bookAppBtn.addEventListener('click', (e) => {
+						window.location.href = url;
+					});
+				}
 			} else {
 				headerNav.classList.remove('fixed-navbar');
 			}
 		});
 	}
 };
+
+const observedElem = headerNav;
+
+const buttonObserver = new MutationObserver((mutations) => {
+	mutations.forEach((mutation) => {
+		console.log(mutation);
+		// const menuBtn = document.querySelector('.menu-btn');
+		// const triggerButtonFunct = (e) => {
+		// 	alert('button click working');
+		// };
+		// if (menuBtn) {
+		// 	menuBtn.addEventListener('click', triggerButtonFunct);
+		// }
+	});
+});
+
+const config = {
+	attributes: true,
+	childList: true,
+	subtree: true,
+};
+
+// buttonObserver.observe(observedElem, config);

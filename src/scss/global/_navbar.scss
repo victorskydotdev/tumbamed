@@ -9,6 +9,7 @@
 	z-index: 3;
 	width: 100%;
 	transition: all 700ms ease-in-out;
+	// overflow: hidden;
 
 	.nav {
 		@include resets.breakpoints();
@@ -16,6 +17,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		position: relative;
 
 		&__logo {
 			.nav__logo-link {
@@ -26,17 +28,29 @@
 		}
 
 		&__links {
-			display: none;
+			// display: none;
 
-			align-items: center;
 			width: 70%;
-			justify-content: space-between;
+			position: absolute;
+			top: 115%;
+			background: linear-gradient(to right, #bb8a48, #cd9e53, #dcc178, #e8d9a0);
+			display: grid;
+			gap: 1em;
+			place-content: center;
+			padding: 3em 2em;
+			border-radius: 20px;
+			transition: all 500ms ease-in;
+			opacity: 0;
+			visibility: hidden;
 
 			.wrap {
-				display: flex;
+				display: grid;
 				gap: 1em;
+				place-content: center;
 
 				.nav__link {
+					text-align: center;
+
 					a {
 						background: resets.$highlight;
 						padding: 13px;
@@ -44,6 +58,7 @@
 						@include resets.poppins();
 						color: resets.$grey;
 						text-transform: capitalize;
+						display: inline-block;
 					}
 				}
 			}
@@ -57,17 +72,27 @@
 
 		.hamburger {
 			.menu-btn {
-				// background: red;
+				background: #323232;
 				border: none;
 				cursor: pointer;
+				height: 50px;
+				width: 50px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 8px;
 
-				img {
-					width: 30px;
+				i {
+					font-size: 18px;
+					@include resets.goldText();
 				}
 			}
 		}
 
 		@media screen and (min-width: 43em) {
+			&__links {
+				width: 50%;
+			}
 		}
 
 		@media screen and (min-width: 62em) {
@@ -75,6 +100,19 @@
 
 			&__links {
 				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				position: unset !important;
+				padding: unset;
+				background: transparent;
+				opacity: 1;
+				visibility: visible;
+				width: 70%;
+
+				.wrap {
+					display: flex;
+				}
 			}
 
 			.hamburger {
@@ -110,4 +148,14 @@
 			}
 		}
 	}
+}
+
+.show-mobile-nav {
+	display: block;
+	position: absolute !important;
+	top: 125% !important;
+	right: 0;
+	opacity: 1 !important;
+
+	visibility: visible !important;
 }
