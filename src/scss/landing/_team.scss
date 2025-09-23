@@ -23,11 +23,7 @@
 				@include resets.text-gradient();
 
 				width: fit-content;
-
-				background: linear-gradient(90deg, #bb8946, #caa25c, #edd98d, #f2f2a4);
-				background-clip: text;
-				-webkit-background-clip: text;
-				color: transparent;
+				@include resets.goldText();
 			}
 
 			.subtext {

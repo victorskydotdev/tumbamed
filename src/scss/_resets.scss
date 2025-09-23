@@ -33,6 +33,13 @@ $text-color: #797575;
 $shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 $radius: 20px;
 
+@mixin goldText() {
+	background: linear-gradient(90deg, #bb8946, #caa25c, #edd98d, #f2f2a4);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
 @mixin poppins() {
 	font-family: 'Poppins', sans-serif;
 	font-style: normal;

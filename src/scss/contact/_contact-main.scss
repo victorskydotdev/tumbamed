@@ -1,0 +1,108 @@
+@use '../resets';
+
+.contact-main {
+	background: #323232;
+	margin-bottom: 7em;
+	padding: 5em 0;
+
+	@media screen and (min-width: 62em) {
+		background: transparent;
+		position: relative;
+		margin-bottom: 25em;
+
+		&::after {
+			content: '';
+			position: absolute;
+			background: #323232;
+			height: 400px;
+			width: 100%;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	.container {
+		width: 90%;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+		display: grid;
+		gap: 4em;
+
+		.text-wrap {
+			.heading {
+				@include resets.goldText();
+				margin-bottom: 0.5em;
+			}
+
+			.subtext {
+				@include resets.goldText();
+			}
+		}
+
+		.form-wrap {
+			background: #fff;
+			padding: 2em 2em;
+			border-radius: 20px;
+
+			.wrapper {
+				.text-area {
+					margin-bottom: 1.5em;
+				}
+
+				.contact-form {
+					display: grid;
+					gap: 1.5em;
+
+					.wrap {
+						display: grid;
+						gap: 1em;
+
+						input,
+						textarea {
+							width: 100%;
+							outline: none;
+							border: none;
+							border-bottom: 1.5px solid rgb(158, 158, 158);
+							padding: 5px 10px;
+							@include resets.poppins();
+							font-size: 13px;
+							color: rgb(121, 121, 121);
+
+							&:focus {
+								@include resets.goldText();
+							}
+						}
+
+						textarea {
+							height: 100px;
+						}
+					}
+
+					.btn-wrap {
+						.btn {
+							@include resets.btn();
+						}
+					}
+				}
+			}
+		}
+
+		@media screen and (min-width: 62em) {
+			width: 85%;
+			display: flex;
+
+			.text-wrap {
+				max-width: 500px;
+				padding-top: 5em;
+			}
+
+			.form-wrap {
+				width: 450px;
+				position: absolute;
+				right: 5%;
+				box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.288);
+			}
+		}
+	}
+}

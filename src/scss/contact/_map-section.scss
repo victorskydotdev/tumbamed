@@ -1,0 +1,33 @@
+@use '../resets';
+
+.map-section {
+	// background: teal;
+	margin-bottom: -5px;
+
+	.heading-wrap {
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 1.5em;
+
+		.wrap {
+			background: #000;
+			width: fit-content;
+			border-radius: 50px;
+
+			.heading {
+				padding: 15px;
+				@include resets.goldText();
+				@include resets.poppins();
+			}
+		}
+
+		@media screen and (min-width: 62em) {
+			width: 90%;
+		}
+	}
+
+	iframe {
+		width: 100%;
+		height: 400px;
+	}
+}
