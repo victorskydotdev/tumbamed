@@ -51,9 +51,15 @@
 		.about-hero-img {
 			height: 300px;
 			width: 100%;
-			background: teal;
+			// background: teal;
 			grid-area: about-hero-img;
-			border-radius: 20px;
+
+			.img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 20px;
+			}
 		}
 
 		@media screen and (min-width: 43em) {
