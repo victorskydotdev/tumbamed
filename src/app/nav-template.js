@@ -69,42 +69,19 @@ export const renderNav = (cb) => {
 		window.addEventListener('scroll', () => {
 			if (window.scrollY > currentPosition) {
 				headerNav.classList.add('fixed-navbar');
-
-				const bookAppBtn = document.querySelector('.book-app-btn');
-
-				const url = `https://www.hotdoc.com.au/medical-centres/tumbarumba-NSW-2653/tumbarumba-medical-practice/doctors`;
-
-				if (bookAppBtn) {
-					bookAppBtn.addEventListener('click', (e) => {
-						window.location.href = url;
-					});
-				}
 			} else {
 				headerNav.classList.remove('fixed-navbar');
 			}
 		});
+
+		const bookAppBtn = document.querySelector('.book-app-btn');
+
+		const url = `https://www.hotdoc.com.au/medical-centres/tumbarumba-NSW-2653/tumbarumba-medical-practice/doctors`;
+
+		if (bookAppBtn) {
+			bookAppBtn.addEventListener('click', (e) => {
+				window.open(url, '_blank').focus();
+			});
+		}
 	}
 };
-
-const observedElem = headerNav;
-
-const buttonObserver = new MutationObserver((mutations) => {
-	mutations.forEach((mutation) => {
-		console.log(mutation);
-		// const menuBtn = document.querySelector('.menu-btn');
-		// const triggerButtonFunct = (e) => {
-		// 	alert('button click working');
-		// };
-		// if (menuBtn) {
-		// 	menuBtn.addEventListener('click', triggerButtonFunct);
-		// }
-	});
-});
-
-const config = {
-	attributes: true,
-	childList: true,
-	subtree: true,
-};
-
-// buttonObserver.observe(observedElem, config);

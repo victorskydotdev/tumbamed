@@ -5,7 +5,10 @@ import { swiper } from './app/horizontal-scroll';
 import { runTeamSlider } from './app/team-slider';
 import { renderFooter } from './app/footer';
 
+import { redirectToBooking } from './app/app';
+
 renderNav();
 swiper.init();
 runTeamSlider();
 renderFooter();
+redirectToBooking();
