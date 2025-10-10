@@ -7,8 +7,12 @@ import { renderFooter } from './app/footer';
 
 import { redirectToBooking } from './app/app';
 
+import { triggerLoader } from './app/loaders';
+
 renderNav();
 swiper.init();
 runTeamSlider();
 renderFooter();
 redirectToBooking();
+
+triggerLoader();

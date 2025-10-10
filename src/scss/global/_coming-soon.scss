@@ -1,0 +1,133 @@
+@use '../resets';
+
+.dom-body {
+	overflow: hidden;
+}
+
+.coming-soon-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: resets.$grey;
+	// background: #323232;
+	z-index: 10;
+	// display: flex;
+	// align-items: center;
+	// justify-content: center;
+
+	.logo-container {
+		width: 90%;
+		margin: 0 auto;
+		padding: 2em 0;
+		position: absolute;
+		left: 5%;
+	}
+
+	.coming-soon-content {
+		display: grid;
+		grid-template-areas:
+			'text-content'
+			'img-wrap';
+
+		.img-wrap {
+			width: 100%;
+			height: 50vh;
+			grid-area: img-wrap;
+			position: relative;
+			display: none;
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background: rgba(0, 0, 0, 0.63);
+			}
+
+			.img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.text-content {
+			color: #fff;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			width: 90%;
+			margin: 0 auto;
+
+			.content {
+				l-cardio {
+					--uib-size: 100px;
+					--uib-color: red;
+					--uib-speed: 1.75s;
+					--uib-bg-opacity: 0.1;
+					margin-bottom: 2em;
+				}
+
+				.heading {
+					@include resets.poppins();
+					font-size: 2rem;
+					line-height: 40px;
+					margin-bottom: 0.6em;
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: 62em) {
+		.logo-container {
+			z-index: 5;
+		}
+
+		.coming-soon-content {
+			grid-template-areas: 'text-content img-wrap';
+			grid-template-columns: repeat(2, 1fr);
+
+			.img-wrap {
+				display: block;
+				height: 100vh;
+			}
+
+			.text-content {
+				l-cardio {
+					position: absolute;
+					bottom: 10%;
+					--uib-size: 100px;
+					--uib-color: red;
+					--uib-speed: 1.75s;
+					--uib-bg-opacity: 0.1;
+					margin-bottom: 2em;
+				}
+
+				.text-wrap {
+					position: absolute;
+					left: 0;
+					// background: teal;
+					left: 5%;
+					top: 50%;
+					text-align: left;
+					max-width: 450px;
+					transform: translateY(-50%);
+					// z-index: 5;
+
+					.heading {
+						font-size: 3.4rem;
+						line-height: 60px;
+						font-weight: 600;
+					}
+
+					.text {
+						font-size: 1.2rem;
+					}
+				}
+			}
+		}
+	}
+}

@@ -33,6 +33,7 @@
 		"webpack-merge": "^6.0.1"
 	},
 	"dependencies": {
+		"ldrs": "^1.1.7",
 		"swiper": "^11.2.10"
 	}
 }
