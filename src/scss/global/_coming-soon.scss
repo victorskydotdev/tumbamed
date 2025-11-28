@@ -1,7 +1,7 @@
 @use '../resets';
 
 .dom-body {
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 .coming-soon-modal {
@@ -16,6 +16,7 @@
 	// display: flex;
 	// align-items: center;
 	// justify-content: center;
+	display: none;
 
 	.logo-container {
 		width: 90%;

@@ -6,11 +6,11 @@ const footerTemplate = () => {
 				<div class="brand-wrap">
 					<h4 class="heading">Get better healthcare in Tumbarumba</h4>
 
-					<p class="text">
+					<!-- <p class="text">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
 						cum, non distinctio aut omnis esse voluptatem laboriosam enim eos
 						facilis?
-					</p>
+					</p> -->
 
 					<div class="wrap">
 						<button class="btn book-app-btn">
@@ -26,11 +26,11 @@ const footerTemplate = () => {
 					<h4 class="heading">Quick links</h4>
 
 					<ul class="links-wrap">
-						<li><a href="#" class="link">Home</a></li>
-						<li><a href="#" class="link">About</a></li>
-						<li><a href="#" class="link">Contact</a></li>
-						<li><a href="#" class="link">Book Appointment</a></li>
-						<li><a href="#" class="link">Call us today</a></li>
+						<li><a href="/" class="link">Home</a></li>
+						<li><a href="/about" class="link">About</a></li>
+						<li><a href="/contact" class="link">Contact</a></li>
+						<li><a href="https://www.hotdoc.com.au/medical-centres/tumbarumba-NSW-2653/tumbarumba-medical-practice/doctors" target="_blank" class="link">Book Appointment</a></li>
+						<li><a href="tel:477-500-9859" class="link">Call us today</a></li>
 					</ul>
 				</div>
 
@@ -43,6 +43,10 @@ const footerTemplate = () => {
 						<a href="#">YouTube</a>
 					</div>
 				</div>
+			</div>
+
+			<div class="license-wrap">
+				<p class="copy">&copy; 2025 Tumbarumba Medical Practice.</p>
 			</div>
   `;
 };

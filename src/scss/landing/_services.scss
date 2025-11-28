@@ -25,21 +25,22 @@
 				// 	#d1b272 100%
 				// );
 
-				background: linear-gradient(90deg, #bb8946, #caa25c, #edd98d, #f2f2a4);
+				// background: linear-gradient(90deg, #bb8946, #caa25c, #edd98d, #f2f2a4);
 
-				background-clip: text;
-				-webkit-background-clip: text;
-				color: transparent;
-				width: fit-content;
+				// background-clip: text;
+				// -webkit-background-clip: text;
+				// color: transparent;
+				// width: fit-content;
+				color: #fff;
 			}
 
 			.subtext {
-				// color: #fff;
-				background: linear-gradient(90deg, #bb8946, #caa25c, #edd98d, #f2f2a4);
+				color: #fff;
+				// background: linear-gradient(90deg, #bb8946, #caa25c, #edd98d, #f2f2a4);
 
-				background-clip: text;
-				-webkit-background-clip: text;
-				color: transparent;
+				// background-clip: text;
+				// -webkit-background-clip: text;
+				// color: transparent;
 				width: fit-content;
 				margin: 0 auto;
 				@include resets.poppins();
