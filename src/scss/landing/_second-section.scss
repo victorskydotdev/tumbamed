@@ -5,6 +5,7 @@
 
 	.container {
 		@include resets.breakpoints();
+		// background: red;
 
 		.brow-highlight {
 			position: relative;
@@ -23,7 +24,7 @@
 		}
 
 		.wrap {
-			width: 60%;
+			width: 100%;
 			margin: 0 auto;
 
 			.heading {
@@ -36,19 +37,6 @@
 				text-align: center;
 
 				@include resets.text-gradient();
-
-				// .highlight1 {
-				// 	color: #7575fe;
-				// }
-				// .highlight2 {
-				// 	color: #df2a83;
-				// }
-				// .highlight3 {
-				// 	color: #fab211;
-				// }
-				// .highlight4 {
-				// 	color: mediumseagreen;
-				// }
 			}
 
 			.subtext {
