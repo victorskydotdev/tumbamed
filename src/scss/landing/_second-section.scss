@@ -53,6 +53,14 @@
 					margin: 1.7em auto 0;
 				}
 			}
+
+			@media screen and (min-width: 43em) {
+				width: 80%;
+			}
+
+			@media screen and (min-width: 62em) {
+				width: 70%;
+			}
 		}
 	}
 }

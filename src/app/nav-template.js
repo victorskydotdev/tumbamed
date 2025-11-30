@@ -13,6 +13,10 @@ const template = (callback) => {
       </div>
 
       <ul class="nav__links navbar">
+        <button class="nav-close-btn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
         <div class="wrap">
           <li class="nav__link">
             <a href="/">Home</a>
@@ -83,5 +87,14 @@ export const renderNav = (cb) => {
 				window.open(url, '_blank').focus();
 			});
 		}
+
+		// close button logic
+		document.addEventListener('click', (e) => {
+			const closeBtn = e.target.closest('.nav-close-btn');
+
+			if (closeBtn) {
+				mobileNav.classList.remove('show-mobile-nav');
+			}
+		});
 	}
 };
