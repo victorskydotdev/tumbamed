@@ -3,9 +3,22 @@
 *,
 *::before,
 *::after {
-	padding: 0;
-	margin: 0;
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--forest: #1a3c34;
+	--sage: #3b6e5f;
+	--moss: #5a9279;
+	--mint: #a8d5c2;
+	--cream: #f5f0e8;
+	--warm-white: #fdfaf5;
+	--gold: #c9a84c;
+	--text: #1c2b26;
+	--text-soft: #4a6358;
+	--radius: 12px;
 }
 
 html {
@@ -13,7 +26,10 @@ html {
 }
 
 body {
-	overflow-x: hidden !important;
+	font-family: 'DM Sans', sans-serif;
+	background: var(--warm-white);
+	color: var(--text);
+	overflow-x: hidden;
 }
 
 li {

@@ -1,17 +1,21 @@
+@use '../scss/resets';
+
 @use '../scss/global/navbar';
 @use '../scss/landing/hero-section';
-@use '../scss/landing/second-section';
+// @use '../scss/landing/second-section';
 @use '../scss/landing/services';
-@use '../scss/landing/expectations';
-@use '../scss/landing/team';
-@use '../scss/landing/acknowledgement';
-@use '../scss/global/footer';
+// @use '../scss/landing/expectations';
+// @use '../scss/landing/team';
+// @use '../scss/landing/acknowledgement';
+// @use '../scss/global/footer';
 
-@use '../scss/about/about-hero';
-@use '../scss/about/more-info-section';
+// @use '../scss/about/about-hero';
+// @use '../scss/about/more-info-section';
 
-@use '../scss/contact/contact-main';
-@use '../scss/contact/map-section';
+// @use '../scss/contact/contact-main';
+// @use '../scss/contact/map-section';
 
 // Coming soon modal style
-@use '../scss/global/coming-soon';
+// @use '../scss/global/coming-soon';
+
+@use '../scss/landing/landing';

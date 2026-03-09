@@ -1,189 +1,69 @@
-@use '../resets';
-
-.header-navbar {
-	// background: red;
-	padding: 1em 0;
-	position: sticky;
+nav {
+	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 3;
-	width: 100%;
-	transition: all 700ms ease-in-out;
-	// overflow: hidden;
-
-	.nav {
-		@include resets.breakpoints();
-		position: relative;
-
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-
-		&__logo {
-			.nav__logo-link {
-			}
-		}
-
-		.nav__links {
-			position: fixed !important;
-			transition: all 500ms ease-in;
-			opacity: 0;
-			visibility: hidden;
-			background: resets.$grey;
-			top: 0 !important;
-			left: 0;
-			height: 100vh;
-			width: 100%;
-			padding-top: 5em;
-			padding-left: 3em;
-			padding-right: 3em;
-
-			.nav-close-btn {
-				background: red;
-				position: absolute;
-				height: 50px;
-				width: 50px;
-				right: 10%;
-				top: 10%;
-				cursor: pointer;
-				border: none;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-
-				i {
-					font-size: 1.5rem;
-					color: #fff;
-				}
-			}
-
-			.wrap {
-				display: grid;
-				gap: 2.5em;
-				margin-bottom: 3em;
-
-				.nav__link {
-					a {
-						font-size: 1.3rem;
-						font-weight: 500;
-						color: #fff;
-					}
-				}
-			}
-
-			.nav__appointment {
-				.btn {
-					@include resets.btn();
-				}
-			}
-		}
-
-		.hamburger {
-			.menu-btn {
-				background: #323232;
-				border: none;
-				cursor: pointer;
-				height: 50px;
-				width: 50px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				border-radius: 8px;
-
-				i {
-					font-size: 18px;
-					@include resets.goldText();
-				}
-			}
-		}
-
-		@media screen and (min-width: 43em) {
-			&__links {
-				width: 50%;
-			}
-		}
-
-		@media screen and (min-width: 62em) {
-			.nav__links {
-				position: unset !important;
-				transition: all 500ms ease-in;
-				background: transparent;
-				height: unset;
-				padding: unset;
-				opacity: 1;
-				visibility: visible;
-				display: flex;
-				width: unset;
-				gap: 7em;
-
-				.nav-close-btn {
-					display: none !important;
-				}
-
-				.wrap {
-					display: flex !important;
-					gap: 1em;
-					margin-bottom: unset;
-
-					.nav__link {
-						text-align: center;
-
-						a {
-							background: resets.$highlight;
-							padding: 13px;
-							border-radius: 40px;
-							@include resets.poppins();
-							color: resets.$grey !important;
-							text-transform: capitalize;
-							display: inline-block;
-							font-size: 1rem !important;
-						}
-					}
-				}
-			}
-
-			.hamburger {
-				display: none;
-			}
-		}
-	}
+	right: 0;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 18px 6%;
+	// background: rgba(26, 60, 52, 0.97);
+	background: #323232;
+	backdrop-filter: blur(12px);
+	border-bottom: 1px solid rgba(169, 213, 194, 0.15);
 }
-
-.move-navbar {
-	transform: translateY(10%);
-	transition: all 700ms ease-in-out;
+.nav-logo {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 1.35rem;
+	font-weight: 600;
+	color: var(--mint);
+	letter-spacing: 0.02em;
+	line-height: 1.2;
 }
-
-.fixed-navbar {
-	background: rgba(255, 255, 255, 0.363);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	box-shadow: resets.$shadow;
-	transition: all 700ms ease-in-out;
-	// width: 90%;
-	// left: 5%;
-	// border-radius: 50px;
-
-	.nav {
-		&__links {
-			.wrap {
-				.nav__link {
-					a {
-						box-shadow: resets.$shadow;
-					}
-				}
-			}
-		}
-	}
-}
-
-.show-mobile-nav {
+.nav-logo span {
 	display: block;
-	position: absolute !important;
-	// top: 125% !important;
-	// right: 0 !important;
-	opacity: 1 !important;
-	// width: 100%;
-
-	visibility: visible !important;
+	font-size: 0.72rem;
+	font-family: 'DM Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: rgba(168, 213, 194, 0.6);
+}
+.nav-links {
+	display: flex;
+	gap: 36px;
+	list-style: none;
+}
+.nav-links a {
+	color: rgba(245, 240, 232, 0.8);
+	text-decoration: none;
+	font-size: 0.88rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	font-weight: 500;
+	transition: color 0.2s;
+}
+.nav-links a:hover {
+	color: var(--mint);
+}
+.nav-cta {
+	background: var(--gold);
+	color: var(--forest);
+	padding: 10px 22px;
+	border-radius: 50px;
+	border: none;
+	font-family: 'DM Sans', sans-serif;
+	font-size: 0.85rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	cursor: pointer;
+	transition:
+		transform 0.2s,
+		box-shadow 0.2s;
+	text-decoration: none;
+}
+.nav-cta:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4);
 }
