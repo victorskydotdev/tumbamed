@@ -68,7 +68,7 @@ section {
 	text-align: center;
 }
 .about-float-num {
-	font-family: 'Cormorant Garamond', serif;
+	// font-family: 'Cormorant Garamond', serif;
 	font-size: 2rem;
 	font-weight: 700;
 	color: var(--forest);
@@ -225,7 +225,8 @@ section {
 
 /* ── FOOTER ── */
 footer {
-	background: #091a16;
+	// background: #091a16;
+	background: linear-gradient(to top, #1f1e1e, #091a16);
 	padding: 60px 6% 30px;
 }
 .footer-grid {
